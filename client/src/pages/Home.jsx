@@ -49,22 +49,27 @@ export default function Home() {
     <div>
       {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
+        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl hover:animate-bounce'>
           Find your next <span className='text-slate-500'>perfect</span>
           <br />
           place with ease
         </h1>
         <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
+        Bestmove House is the best place to find your next perfect place to
           live.
           <br />
           We have a wide range of properties for you to choose from.
+
+          
+          <p>
+Ready to embark on your real estate journey? Join Bestmove House today and explore a world of possibilities. Whether you're listing your property, searching for your dream home, or seeking investment opportunities, we are here to guide you every step of the way.</p>
         </div>
         <Link
           to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+          className='text-xs sm:text-sm text-orange-400 font-bold hover:underline'
         >
-          Let's get started...
+          <h3 className='text-3xl font-bold mb-4 text-slate-500'>Let's Get Started Today!</h3>
+           
         </Link>
       </div>
 
@@ -74,14 +79,19 @@ export default function Home() {
           offerListings.length > 0 &&
           offerListings.map((listing) => (
             <SwiperSlide>
+              
               <div
                 style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
+                  marginInline:'10%',
+                  
                 }}
-                className='h-[500px]'
+                className='h-[450px]'
                 key={listing._id}
-              ></div>
+              >
+                <img className='h-[450px] w-[100%] ms-[10px] me-[10px] hover:border-t-4' 
+                src={`${listing.imageUrls[2]}`} 
+                slt="house image"/>
+              </div>
             </SwiperSlide>
           ))}
       </Swiper>

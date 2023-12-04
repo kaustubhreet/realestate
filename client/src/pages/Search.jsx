@@ -184,7 +184,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.offer}
               />
-              <span>Offer</span>
+              <span>Offers</span>
             </div>
           </div>
           <div className='flex gap-2 flex-wrap items-center'>
