@@ -3,6 +3,9 @@ import React from 'react'
 export default function About() {
   return (
     <div className='py-20 px-4 max-w-6xl mx-auto'>
+      <div style={{width:'-webkit-fill-available',marginInline:"10%",marginBottom:"20px"}}>
+        <img src="./assets/ResortPic-1.webp" alt="resort"/>
+      </div>
       <h1 className='text-3xl font-bold mb-4 text-slate-800 hover:animate-pulse'>About Bestmove House</h1>
       <p className='mb-4 text-slate-700'>Welcome to Bestmove House, your premier destination for real estate solutions worldwide. At Bestmove House, we understand that finding the perfect home or property is a significant decision. That's why we've crafted a platform that brings together buyers, sellers, and renters from across the globe, offering a seamless experience in the world of real estate.</p>
       <h1 className='text-3xl font-bold mb-4 text-slate-800 hover:animate-pulse'>Our Mission </h1>

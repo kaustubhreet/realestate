@@ -19,6 +19,7 @@ mongoose
     console.log(err);
   });
 
+  //for deployment, provide dynamic directive name as given locally 
   const __dirname = path.resolve();
 
 const app = express();
@@ -40,7 +41,7 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
 
-
+//used for production static file
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
 app.get('*', (req, res) => {
