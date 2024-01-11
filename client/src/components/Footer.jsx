@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className='bg-slate-200' style={{
-      bottom:"0",position:"fixed",left:"0",width:"100%"}}
+      bottom:"0",position:"relative",left:"0",width:"100%"}}
     >
     <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
       <Link to='/'>
@@ -16,8 +16,9 @@ export default function Footer() {
           <span className='text-slate-700'>HOUSE</span>
         </h1>
       </Link>
-      
-      <FaPhone className='text-slate-600' onClick={()=>window.open("tel:+91-9262685542")}/>
+      <span style={{color:"darkgreen",display:"flex",fontSize:"20px", fontWeight:"bolder"}}>
+      <FaPhone className='text-slate-600 mt-2' onClick={()=>window.open("tel:+91-9262685542")}/>+91-9262685542
+      </span>
       </div>
       
      </footer>

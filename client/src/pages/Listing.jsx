@@ -14,6 +14,7 @@ import {
   FaShare,
 } from 'react-icons/fa';
 import Contact from '../components/Contact';
+import Loader from './loader';
 
 // https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
 
@@ -51,20 +52,22 @@ export default function Listing() {
 
   return (
     <main>
-      {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
+      {loading && <Loader/>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
       )}
       {listing && !loading && !error && (
-        <div>
-          <Swiper navigation>
+        <div >
+          <Swiper navigation style={{
+          height:"700px"
+        }}>
             {listing.imageUrls.map((url) => (
               <SwiperSlide key={url}>
                 <div
-                  className='h-[500px] m-1 '
+                  className='h-[700px] m-3'
                   style={{
                     background: `url(${url}) center no-repeat`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'cover',height:"100%",width:"100%",paddingBottom:"20px"
                   }}
                 ></div>
               </SwiperSlide>
@@ -100,12 +103,12 @@ export default function Listing() {
               {listing.address}
             </p>
             <div className='flex gap-4'>
-              <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+              <p className='w-full max-w-[200px] text-white text-center p-1 rounded-md' style={{"background":"darkolivegreen"}}>
                 {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
               </p>
               {listing.offer && (
                 <p className='bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
-                  ${+listing.regularPrice - +listing.discountPrice} OFF
+                 Price: ${+listing.regularPrice - +listing.discountPrice} 
                 </p>
               )}
             </div>

@@ -31,7 +31,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=rent&limit=4');
+        const res = await fetch('/api/listing/get?type=rent');
         const data = await res.json();
         setRentListings(data);
 
@@ -43,7 +43,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
+        const res = await fetch('/api/listing/get?type=sale');
         const data = await res.json();
 
         //fetching all data from db
